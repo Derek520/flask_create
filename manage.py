@@ -4,10 +4,10 @@
 from flask import Flask
 from flask_script import Manager
 from flask_migrate import MigrateCommand,Migrate
-from app import db
+from app import app,db
 
-# 创建Flask实例对象
-app = Flask(__name__)
+# # 创建Flask实例对象
+# app = Flask(__name__)
 # 创建命令行Manager对象
 manager = Manager(app)
 # 创建数据库迁移对象
@@ -15,9 +15,7 @@ Migrate(app,db)
 # 创建命令行数据库迁移指令
 manager.add_command('db',MigrateCommand)
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+app.debug=True
 
 
 if __name__ == '__main__':
