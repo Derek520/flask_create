@@ -19,3 +19,12 @@ manage.py文件完全控制程序的启动，
 问题：无能的表现，循环导入问题
 解决:双方任意一方，延迟导入，或者在使用时再导入
 
+开启csfr保护机制
+
+问题1：KeyError: 'A secret key is required to use CSRF.' // Werkzeug Debugger
+
+解决：SECRET_KEY = 'y8P8rzqR0HOgWq+beq6g+KfGYw+xTLyRqr0QZCQEOXM='
+
+问题2：The CSRF token is missing
+
+解决：
