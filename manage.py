@@ -4,7 +4,11 @@
 from flask import Flask
 from flask_script import Manager
 from flask_migrate import MigrateCommand,Migrate
-from app import app,db
+# from app import app,db
+from app import create_app
+from config import config_dict
+app,db = create_app(config_dict['develop'])
+
 
 # # 创建Flask实例对象
 # app = Flask(__name__)
