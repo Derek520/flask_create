@@ -7,6 +7,8 @@ from flask_migrate import MigrateCommand,Migrate
 # from app import app,db
 from app import create_app
 from config import config_dict
+
+
 app,db = create_app(config_dict['develop'])
 
 

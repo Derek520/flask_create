@@ -28,3 +28,7 @@ manage.py文件完全控制程序的启动，
 问题2：The CSRF token is missing
 
 解决：
+
+redis,session配置
+- redis数据相关配置在config.py
+- session在应用中的init文件中
