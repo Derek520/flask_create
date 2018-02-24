@@ -15,8 +15,6 @@ Migrate(app,db)
 # 创建命令行数据库迁移指令
 manager.add_command('db',MigrateCommand)
 
-app.debug=True
-
 
 if __name__ == '__main__':
     # app.run(debug=True,host='0.0.0.0')
