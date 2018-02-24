@@ -32,5 +32,11 @@ manage.py文件完全控制程序的启动，
 redis,session配置
 - redis数据相关配置在config.py
 - session在应用中的init文件中
+
 日志logs配置
 - 创建logs文件夹
+
+静态文件的访问，需要重新创建蓝图
+- 需要在tools文件夹中创建commnos.py文件,重写正则
+- web_static_html,进行静态文件访问接口
+- 需要创建一个新的蓝图

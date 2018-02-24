@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf.csrf import CSRFProtect
 from config import config_dict,Config
 from flask_session import Session
-
+from .tools.commons import RegexConverter
 
 db = SQLAlchemy()
 
@@ -22,6 +22,8 @@ def create_app(config_info):
 
     # 创建Flask实例对象
     app = Flask(__name__)
+
+    app.url_map.converters['re']=RegexConverter
     # 配置文件需要紧跟着app创建
     app.config.from_object(config_info)
     # 创建数据库对象
@@ -42,5 +44,8 @@ def create_app(config_info):
     # 3.注册蓝图对象
     from app.main import api
     app.register_blueprint(api,url_prefix='/api/v1_0')
+
+    from .web_static_html import html
+    app.register_blueprint(html)
 
     return app,db
